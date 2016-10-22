@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{Nikolaidis_2016_8035}
+Stefanos Nikolaidis, Anton Kuznetsov, David Hsu, and Siddhartha Srinivasa.
+\newblock Formalizing human-robot mutual adaptation via a bounded memory based
+  model.
+\newblock In {\em Human-Robot Interaction}, March 2016.
+
+\bibitem{nikolaidis2013human}
+Stefanos Nikolaidis and Julie Shah.
+\newblock Human-robot cross-training: Computational formulation, modeling and
+  evaluation of a human team training strategy.
+\newblock In {\em Proceedings of the 8th ACM/IEEE international conference on
+  Human-robot interaction}, pages 33--40. IEEE Press, 2013.
+
+\end{thebibliography}

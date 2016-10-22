@@ -1,0 +1,187 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+%%%%%%%%%%%%%% ADDED BY US %%%%%%%%%%%%%%%%%%%
+% \label{ssec:std_pair} \ref{ssec:std_pair}
+% https://www.sharelatex.com/learn/Page_size_and_margins
+\usepackage[letterpaper, margin=1in]{geometry}
+% Inline commenti:::ng
+
+
+\usepackage[dvipsnames]{xcolor}
+% http://latexcolor.com/
+\definecolor{navyblue}{rgb}{0.0, 0.0, 0.5}
+\newcommand{\rnote}[1]{{\xxnote{SL}{red}{#1}}}
+\newcommand{\bnote}[1]{{\xxnote{SL}{blue}{#1}}}
+\newcommand{\onote}[1]{{\xxnote{SL}{orange}{#1}}}
+\newcommand{\nbnote}[1]{{\xxnote{SL}{navyblue}{#1}}}
+\newcommand{\jgnote}[1]{{\xxnote{SL}{JungleGreen}{#1}}}
+\newcommand{\bonote}[1]{{\xxnote{SL}{BurntOrange}{#1}}}
+\usepackage{amsmath}
+% implement conditional notes (turn on/off with \hidenotes above)
+\newcommand{\xxnote}[3]{}
+\ifx\hidenotes\undefined
+  \usepackage{color}
+  \renewcommand{\xxnote}[3]{\color{#2}{#1: #3}}
+\fi
+
+% Internal section references
+\newcommand{\figref}[1]{Fig.\ \ref{#1}}
+\newcommand{\secref}[1]{Sec.\ \ref{#1}}
+\newcommand{\tabref}[1]{Table \ref{#1}}
+\usepackage{moreverb,url}
+
+\usepackage{amssymb}
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{mindmap}
+% Fancier version: http://www.texample.net/tikz/examples/feature/mindmaps/
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+% for subfigure
+\usepackage[font=footnotesize]{subcaption}
+\usepackage[font=footnotesize]{caption}
+
+% Font
+\usepackage{lmodern}        % Latin Modern family of fonts. Very much like Computer Modern, but with many more glyphs
+                            % (e.g., for characters with accents, glyphs, cedillas, etc)
+\usepackage[T1]{fontenc}    % fontenc is oriented to output, that is, what fonts to use for printing characters.
+                            % http://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc
+                            % http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+
+                            %%%%     FONTS PACKAGE OPTIONS in the Preamble  %
+%%%%     always replace default Computer Modern with Latin Modern [T1] encoding:
+\renewcommand{\ttdefault}{lmtt} % MONO Latin Modern Font % T1 encoding of cmtt font style
+\renewcommand{\rmdefault}{lmr} % SERIF Latin Modern Font % T1 encoding of cmr font style
+\renewcommand{\sfdefault}{lmss} % SANS Latin Modern Font % T1 encoding of cmss font style
+% switch to sans family and then choose a font from the family
+\renewcommand{\familydefault}{\sfdefault}
+%  %  %   %   %   %   %   %   %   %   %   %   %   %   %   %
+%  %  % PSNFSS \ssfamily fonts (SANS)
+% \usepackage{helvet} % PSNFSS Font, in every TeX distribution
+% \usepackage{avant}  % PSNFSS Font, in every TeX distribution
+%  %  % Extended \ssfamily (Sans) fonts; load extraFonts option from TeX
+\usepackage[scaled=0.88]{berasans}% package has a handy scaling option
+% \usepackage{libris}   % a nice, almost handwritten calligraphic look
+% \usepackage{biolinum} % included with the {Libertine} font package
+% \usepackage{iwona}
+% \usepackage{paratype}
+%%%  END OF SANS SERIF FONT PACKAGES
+%  %  %  %   %   %   %   %   %   %   %   %   %   %   %   %   %   %
+%  %  % PSNFSS \rmfamily fonts (SERIF)
+% \usepackage{mathptmx}  % Times % PSNFSS Font, in every TeX distribution %
+% \usepackage{charter}   % Bitstream Charter % PSNFSS Font, in every TeX distribution %
+% \usepackage{mathpazo}  % Palatino % PSNFSS Font, in every TeX distribution
+% \usepackage{bookman}   % Bookman % PSNFSS Font in every TeX
+% \usepackage{chancery}  % Zapf Chancery % PSNFSS Font in every TeX, a Calligraphic Font
+% \usepackage{newcent}   % New Century Schoolbook % PSNFSS Font in every TeX distribution % To replace it's Avant Garde sans add this:% \renewcommand{\sfdefault}{xxx}
+%  %  % Extended \rmfamily (SERIF) fonts; load extraFonts option from TeX
+% \usepackage[scaled=0.88]{beraserif}% package has a handy scaling option
+% \usepackage{XCharter} % Bitstream's Charter extended with many style varieties
+% \usepackage{fouriernc}% Century Schoolbook % compact and lighter than New Century Schoolbook
+% \usepackage{tgschola} % TeX Gyre Schola, New Century Schoolbook with many font style varieties
+% \usepackage{tgtermes} % TeX Gyre Termes, Times with many font style varieties
+% \usepackage{tgbonum}  % TeX Gyre Bonum, Bookman with many font style varieties
+% \usepackage{tgpagella}% TeX Gyre Pagello, a Palatino font with many font style varieties
+\usepackage{fourier}  % Utopia, package {utopia} is obsolete
+% \usepackage{txfonts}  % TX Serif and Sans (Helvetica)
+% \usepackage{kpfonts}  % KP Serif and Sans, large variety of font styles
+% \usepackage{libertine}% Libertine + Linux Biolinum (Extra TeXLive fonts)
+% \usepackage{fbb}      % A Garamond Font (Bembo) with many font styles
+% \usepackage[varg, cmintegrals, cmbraces, ]{newtxtext,newtxmath}  % Other options: libertine, uprightGreek (U.S.) or slantedGreek (ISO), etc...
+% \usepackage{tgtermes}                                            % Only serif ("TeX-Gyre" text)
+% \usepackage{kpfonts}                                             % "Kepler" fonts
+% \usepackage{mathpazo}                                            % Based on Hermann Zapf's Palatino font
+% \usepackage{txfonts}                                             % More than a decade old
+% \usepackage{pslatex}                                             % Obsolete?
+% \usepackage{mathptmx}
+% \usepackage[scaled=.90]{helvet}
+% \usepackage{courier}
+%%% END SERIF FONTS
+%%% NOTE!!! Be sure to comment out all but ONE Serif and ONE Sans
+%%% from the package selections above.
+%  %  %   %   %   %   %   %   %   %   %   %   %   %   %
+%  %  %   %   %   %   %   %   %   %   %   %   %   %   %
+%  %  % Load Math Support if necessary
+%
+% \usepackage[myFontPackage]{mathdesign}
+%
+%
+%%% END OF FONTS In the Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% http://stackoverflow.com/questions/741985/latex-source-code-listing-like-in-professional-books
+\usepackage{listings}
+\lstset{
+language=C,
+basicstyle=\footnotesize\ttfamily,
+numbers=left,
+numberstyle=\tiny,
+frame=tb,
+columns=fullflexible,
+showstringspaces=false
+}
+
+% https://contrarymotion.net/2007/03/23/latex-itemize-bullet-characters/comment-page-1/
+% http://tex.stackexchange.com/questions/36443/how-to-change-the-nested-itemize-bullet-characters
+\usepackage{enumitem}
+\setlist[itemize,1]{label={$\circ$}}
+\setlist[itemize,2]{label={$\diamondsuit$}}
+\setlist[itemize,3]{label={$\star$}}
+\setlist[itemize,4]{label={$\rightarrow$}}
+\setlist[itemize,5]{label={$\ast$}}
+\setlist[itemize,6]{label={$\cdot$}}
+
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\begin{document}
+% this is an alternate method of creating a title
+%\hfill\vbox{\hbox{Gius, Mark}
+%       \hbox{Cpe 456, Section 01}  
+%       \hbox{Lab 1}    
+%       \hbox{\today}}\par
+%
+%\bigskip
+%\centerline{\Large\bf Lab 1: Security Audit}\par
+%\bigskip
+\title{Roots and humans teaming up in pursuit-evasion games: modeling and learning issues}
+\author{Shen Li}
+
+\maketitle
+
+\input{./brief_introduction.tex}
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
+
+
+
+
